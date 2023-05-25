@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  ports:
+  - port: 80
+    name: web
+  clusterIP: None # Setar como None para criar Headless Service. Não será atribuido um IP para este service.
+  selector:
+    app: nginx
